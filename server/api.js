@@ -8,9 +8,6 @@ app.use(cors());
 app.use(express.json());
 
 const path = require('path');
-
-
-const path = require('path');
 app.use(express.static(path.join(__dirname, '..', '_site')));
 
 const upload = multer({ storage: multer.memoryStorage() });
