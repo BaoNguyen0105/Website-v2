@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Test</title>
+        <link rel="stylesheet" href="/css/styles.css">
+    </head>
+  <body>
+    <header>
+    <div class="logo">Logo</div>
+    <div id="runtime-status" style="font-weight: 600; color: var(--text-muted);">Main Desk</div>
+</header>
+    
+    
+<main>
+    <div id="quiz-container" class="page active">
+        <div class="quiz-layout">
+            <div class="sidebar">
+    <span class="sidebar-title">Question Navigator</span>
+    <div class="matrix-grid" id="matrix-target"></div>
+    <button class="btn-nav" style="margin-top: auto; color: var(--incorrect); width: 100%;" onclick="abortSessionToMain()">Quit Quiz</button>
+</div>
+
+
+
+            <div class="question-canvas">
+    <div class="question-body">
+        <h3 id="canvas-question-text">Loading question data parameters...</h3>
+        <div class="image-gallery" id="canvas-image-gallery"></div>
+        <div class="options-list" id="canvas-options-box"></div>
+    </div>
+
+    <div class="control-bar">
+        <button class="btn-nav" id="btn-prev" onclick="stepActiveIndex(-1)">Previous</button>
+        <button class="btn-action" id="btn-check" onclick="evaluateActiveQuestionImmediate()">Check Answer</button>
+        <button class="btn-action" id="btn-submit-quiz" style="display: none;" onclick="compileAndSubmitAll()">Submit Final Quiz</button>
+        <button class="btn-nav" id="btn-next" onclick="stepActiveIndex(1)">Next</button>
+    </div>
+</div>
+        </div>
+    </div>
+
+    <div id="results-container" style="display: none; text-align: center; padding: 2rem;">
+        <h2>Quiz Complete!</h2>
+        <div class="results-stats">
+            <p>Score: <span id="results-score">0</span> / <span id="results-total">0</span></p>
+            <p>Percentage: <span id="results-percentage">0%</span></p>
+        </div>
+        <button class="btn-action" onclick="abortSessionToMain()" style="margin-top: 1rem;">Return to Main Menu</button>
+    </div>
+</main>
+
+<script src="/js/quiz.js"></script>
+
+    
+  </body>
+</html>

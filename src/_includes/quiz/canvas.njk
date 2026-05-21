@@ -1,0 +1,14 @@
+<div class="question-canvas">
+    <div class="question-body">
+        <h3 id="canvas-question-text">Loading question data parameters...</h3>
+        <div class="image-gallery" id="canvas-image-gallery"></div>
+        <div class="options-list" id="canvas-options-box"></div>
+    </div>
+
+    <div class="control-bar">
+        <button class="btn-nav" id="btn-prev" onclick="stepActiveIndex(-1)">Previous</button>
+        <button class="btn-action" id="btn-check" onclick="evaluateActiveQuestionImmediate()">Check Answer</button>
+        <button class="btn-action" id="btn-submit-quiz" style="display: none;" onclick="compileAndSubmitAll()">Submit Final Quiz</button>
+        <button class="btn-nav" id="btn-next" onclick="stepActiveIndex(1)">Next</button>
+    </div>
+</div>

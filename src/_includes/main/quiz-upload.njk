@@ -1,0 +1,13 @@
+<div class="card">
+    <h2>Bulk Ingestion Upload</h2>
+    <div class="file-upload-box" onclick="document.getElementById('file-picker').click()">
+        <p style="color: var(--text-muted); font-size: 0.9rem;">Click to upload JSON or CSV template package</p>
+        <input type="file" id="file-picker" accept=".json,.csv" style="display: none;" onchange="handleBulkUpload(event)">
+    </div>
+
+    <button class="btn-nav" style="width: 100%; margin-top: 1rem; font-size: 0.85rem;" onclick="toggleFormatInstructions()">
+        📋 View Formatting Guide
+    </button>
+
+    {% include "main/format-guide.njk" %}
+</div>

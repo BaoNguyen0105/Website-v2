@@ -1,0 +1,23 @@
+{% extends "base.njk" %}
+
+{% block content %}
+<main>
+    <div id="quiz-container" class="page active">
+        <div class="quiz-layout">
+            {% include "quiz/sidebar.njk" %}
+            {% include "quiz/canvas.njk" %}
+        </div>
+    </div>
+
+    <div id="results-container" style="display: none; text-align: center; padding: 2rem;">
+        <h2>Quiz Complete!</h2>
+        <div class="results-stats">
+            <p>Score: <span id="results-score">0</span> / <span id="results-total">0</span></p>
+            <p>Percentage: <span id="results-percentage">0%</span></p>
+        </div>
+        <button class="btn-action" onclick="abortSessionToMain()" style="margin-top: 1rem;">Return to Main Menu</button>
+    </div>
+</main>
+
+<script src="/js/quiz.js"></script>
+{% endblock %}

@@ -1,0 +1,18 @@
+<div id="format-instructions-box" style="display: none; margin-top: 1.5rem; border-top: 1px solid var(--border); padding-top: 1rem;">
+    
+    <div style="margin-bottom: 1.5rem;">
+        <h4 style="color: var(--primary); margin-bottom: 0.5rem; font-size: 0.95rem;">JSON Format (.json)</h4>
+        <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.5rem;">
+            Must be an array of objects. Supports multiple images. The <code>correct_option</code> must match one of your choices exactly.
+        </p>
+        <pre style="background: var(--bg-main); padding: 0.75rem; border-radius: 4px; font-size: 0.75rem; overflow-x: auto; font-family: monospace;">
+[
+{
+"question_text": "What is 2 + 2?",
+"correct_option": "4",
+"options": ["3", "4", "5"],
+"images": ["/images/math.png"]
+}
+]</pre>
+    </div>
+</div>

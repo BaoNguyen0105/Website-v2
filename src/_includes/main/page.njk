@@ -1,0 +1,19 @@
+{% extends "base.njk" %}
+
+{% block content %}
+  <!-- ================= MAIN PAGE PANEL ================= -->
+  <main>
+    <div id="page-main" class="page active">
+      <div class="main-container">
+        {% include "main/quiz-list.njk" %}
+
+        <div>
+          {% include "main/quiz-config.njk" %}
+          {% include "main/quiz-upload.njk" %}
+        </div>
+      </div>
+    </div>
+
+    {{ content | safe }}
+  </main>
+{% endblock %}
