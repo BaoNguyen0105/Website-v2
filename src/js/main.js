@@ -118,7 +118,7 @@ async function initiateQuizSessionSetup(quizId) {
     sessionStorage.setItem("randomizeA", document.getElementById('cfg-rand-a').checked);
     sessionStorage.setItem("imediateMode", document.querySelector('input[name="cfg-feedback"]:checked').value === 'per-q');
 
-    window.location.href=`quiz/index?id=${quizId}`;
+    window.location.href=`quiz?id=${quizId}`;
 };
 
 function showDeleteConfirm(quizId, title) {
