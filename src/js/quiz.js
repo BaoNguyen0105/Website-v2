@@ -1,4 +1,4 @@
-const API_BASE = 'http://localhost:3000/api';
+const API_BASE = '/api';
 
 let sessionState = {
     currentQuizId: null,
@@ -137,7 +137,7 @@ function renderActiveQuestionCanvas(index, questionId) {
         if (currentData.images && currentData.images.length > 0) {
             currentData.images.forEach(imgObj => {
                 const img = document.createElement('img');
-                img.src = imgObj.image_url.startsWith('http') ? imgObj.image_url : `http://127.0.0.1:3000${imgObj.image_url}`;
+                img.src = imgObj.image_url;
                 img.className = 'quiz-image';
                 gallery.appendChild(img);
             });
