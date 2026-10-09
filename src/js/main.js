@@ -163,3 +163,35 @@ function toggleFormatInstructions() {
         box.style.display = 'none';
     }
 }
+
+async function handleBulkUpload(event) {
+    const file = event.target.files[0];
+    if (!file) return;
+
+    // Prompt user directly for title structure parameter binding tracking
+    const quizTitleInput = prompt("Enter a descriptive title for this practice quiz dataset:", file.name.split('.')[0]);
+    if (quizTitleInput === null) return; // Action aborted by user
+
+    const formData = new FormData();
+    formData.append('file', file);
+    formData.append('title', quizTitleInput || file.name.split('.')[0]);
+
+    try {
+        const response = await fetch(`${API_BASE}/quiz/upload`, {
+            method: 'POST',
+            body: formData
+        });
+        
+        if (!response.ok) {
+            const errorBody = await response.json().catch(() => null);
+            const errorMessage = errorBody?.error || errorBody?.message || 'Data structure serialization failure format.';
+            throw new Error(errorMessage);
+        }
+        
+        alert('File uploaded and database transaction fully committed successfully.');
+        event.target.value = ''; 
+        fetchAndRenderQuizDirectory();
+    } catch (err) {
+        alert(`Upload failed: ${err.message}`);
+    }
+}
