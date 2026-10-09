@@ -155,6 +155,11 @@ async function deleteQuizRecord(quizId) {
     }
 }
 
-
-
-
+function toggleFormatInstructions() {
+    const box = document.getElementById('format-instructions-box');
+    if (box.style.display === 'none') {
+        box.style.display = 'block';
+    } else {
+        box.style.display = 'none';
+    }
+}
