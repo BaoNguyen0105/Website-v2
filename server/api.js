@@ -287,9 +287,10 @@ async function insertParsedQuestion(connection, quizId, questionData) {
 app.post('/api/quiz/upload', upload.single('file'), async (req, res) =>{
     console.log('POST /api/quiz/upload - title:', req.body.title, 'fileName:', req.file?.originalname);
     const quizTitle = req.body.title;
+    let parsedQuestions = [];
     try{
         const fileContent = req.file.buffer.toString('utf-8');
-        const parsedQuestions = JSON.parse(fileContent);
+        parsedQuestions = JSON.parse(fileContent);
     }
     catch (parseErr) {
         console.log('Response: 400 - File parse error:', parseErr.message);
